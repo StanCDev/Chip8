@@ -31,6 +31,7 @@ When I put the following text in markdown it doesnt do newlines:
 ```
 
 I decided to change it a bit as the interpreter is not stored in main memory!
+
 ```
 Can you add breaks to this one too:
 +---------------+= 0xFFF (4095) End of Chip-8 RAM
