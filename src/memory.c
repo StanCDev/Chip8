@@ -20,12 +20,12 @@ int init_mem(uint32_t mem_size, Memory* mem){
 
 }
 
-int delete_mem(Memory** mem){
+int delete_mem(Memory* mem){
     M_REQUIRE_NON_NULL(mem);
-    if (*mem != NULL){
-        free(*mem);
-        *mem = NULL;
-    }
+    M_REQUIRE_NON_NULL(mem->ram);
+    free(mem->ram);
+    mem->ram = NULL;
+    mem->size = 0;
     return ERR_NONE;
 }
 

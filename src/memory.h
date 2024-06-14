@@ -26,7 +26,7 @@ int init_mem(uint32_t mem_size, Memory* mem);
  * @param mem : memory to be freed
  * @return int : error code
  */
-int delete_mem(Memory** mem);
+int delete_mem(Memory* mem);
 
 /**
  * @brief 
