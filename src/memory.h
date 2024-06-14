@@ -1,5 +1,6 @@
 #pragma once
 
+#include "err.h"
 #include "types.h"
 #include <stdint.h>
 
@@ -7,6 +8,8 @@ typedef struct {
     byte* ram;
     uint32_t size;
 } Memory;
+
+#define MEM_SIZE 4096
 
 /**
  * @brief Initialise a memory struct
@@ -33,7 +36,7 @@ int delete_mem(Memory** mem);
  * @param out : pointer to byte with read data
  * @return int 
  */
-int read_mem(Memory* mem, word addr, byte out);
+int read_mem(Memory* mem, word addr, byte* out);
 
 /**
  * @brief 
@@ -42,4 +45,4 @@ int read_mem(Memory* mem, word addr, byte out);
  * @param addr :address to write in memory
  * @return int : error code
  */
-int write_mem(Memory* mem, word addr);
+int write_mem(Memory* mem, word addr, byte in);

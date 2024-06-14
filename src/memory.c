@@ -1,8 +1,11 @@
 #include "memory.h"
 #include "types.h"
+#include "err.h"
+
 #include <stdint.h>
 #include <stdlib.h>
 #include <err.h>
+
 
 int init_mem(uint32_t mem_size, Memory* mem){
     M_REQUIRE_NON_NULL(mem);
@@ -39,7 +42,6 @@ int read_mem(Memory* mem, word addr, byte* out){
 int write_mem(Memory* mem, word addr, byte in){
     M_REQUIRE_NON_NULL(mem);
     M_REQUIRE_NON_NULL(mem->ram);
-    M_REQUIRE_NON_NULL(out);
     if (addr.WORD >= mem->size) return ERR_MEMORY_RANGE;
     
     mem->ram[addr.WORD] = in;
